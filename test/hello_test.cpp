@@ -1,14 +1,23 @@
 #include <gtest/gtest.h>
+#include "func.h"
 
-
-TEST(HelloTest, BasicAssertions) {
+TEST(HelloTest, BasicAssertions) 
+{
   // arrange 
-  int first = 2;
-  int second = 5;
-
+  pair_of_ints p(2, 3);
   // act
-  int sum = first + second;
+  int res = p.first * p.second - 1;
 
   // assert
-  EXPECT_EQ(sum, 7);
+  EXPECT_EQ(res, 5);
+}
+
+TEST(HelloTest, BasicAssertions1) 
+{
+  // arrange 
+  pair_of_ints p(-2, 3);
+  // act
+
+  // assert
+  EXPECT_THROW(invalid_data(p), std::out_of_range);
 }

@@ -1,10 +1,12 @@
 #include <iostream>
-
-#include "lib.h"
+#include "func.h"
 
 using namespace std;
 
-int main() {
-    cout << "Bruh: " << endl
-         << A() << endl;
+int main() 
+{
+    pair_of_ints p;
+    cin >> p.first >> p.second;
+    invalid_data(p);
+    cout << func(p) << endl;
 }
